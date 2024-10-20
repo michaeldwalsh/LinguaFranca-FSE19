@@ -257,3 +257,41 @@ Why giant flat files?
 ## Contact
 
 Contact J.C. Davis at davisjam@vt.edu with any questions.
+
+
+# Modifications
+
+## Random regexes 
+
+Using `shuf` to get random lines from unique regex file. 
+
+    shuf -n $1 $ECOSYSTEM_REGEXP_PROJECT_ROOT/data/production-regexes/uniq-regexes-8.json > $1-regexes.json
+
+Gives n random regexes from all unique in the dataset. Use like so: `./randomRegex.sh 10` for a file called `10-regexes.json`
+
+## Arch install 
+
+Im working on arch. Ensure Cargo, go, node, python, java, maven are installed. 
+
+Use python venv: `python -m venv .venv` and `source .venv/bin/activate`.
+
+Install python dependencies with `pip install -r requirements.txt`
+
+Interesting programs and testing tools in `./bin`
+
+SLRegexDetectorOption seems to be broken idk so i removed the code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

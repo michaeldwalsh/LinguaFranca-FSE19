@@ -45,7 +45,7 @@ sub createSmallRegexFile {
 
   &logPhase("Creating small regex file from $baseRegexFile ($numRegexesToTail regexes)");
 
-  &cmd("tail -$numRegexesToTail $baseRegexFile > $smallRegexFile");
+  &cmd("shuf -n $numRegexesToTail $baseRegexFile > $smallRegexFile");
 }
 
 sub runSyntaxAnalysis {
@@ -72,6 +72,7 @@ sub runPerformanceAnalysis {
 
   &cmd("$ENV{ECOSYSTEM_REGEXP_PROJECT_ROOT}/bin/test-for-SL-behavior.py --regex-file $regexFile --out-file $outFile > $LOG_DIR/test-performance-$$-log.txt 2>&1");
   &cmd("$ENV{ECOSYSTEM_REGEXP_PROJECT_ROOT}/bin/analyze-SL-behavior.py --slra-file $outFile --vis-dir $VIS_DIR >$LOG_DIR/analyze-performance-$$-report.txt 2>$LOG_DIR/analyze-performance-$$-log.txt");
+
 }
 
 sub printSummary {

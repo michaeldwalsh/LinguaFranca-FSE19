@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 "use strict";
+// Transpile TS to JS using tsc.
+//
+// Roughly equivalent to some command-line invocation of tsc,
+// but I'm not sure which one. Anyway...
 exports.__esModule = true;
 var ts = require("typescript");
 var fs = require("fs");
